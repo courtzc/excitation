@@ -1,4 +1,4 @@
-import { Review } from "./Types";
+import { Review } from "../Types";
 import {
   CircleRegular,
   CheckmarkCircleFilled,

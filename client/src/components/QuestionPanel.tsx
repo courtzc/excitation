@@ -1,13 +1,13 @@
-import { largeSmall, useAppStateValue } from "./State.ts";
+import { largeSmall, useAppStateValue } from "../State.ts";
 import {
   ChevronUpRegular,
   ChevronUpFilled,
   ChevronDownRegular,
   ChevronDownFilled,
 } from "@fluentui/react-icons";
-import { useDispatchHandler } from "./Hooks.ts";
-import { HoverableIcon } from "./Hooks.tsx";
-import { LoadedState, PseudoBoolean } from "./Types.ts";
+import { useDispatchHandler } from "../Hooks.ts";
+import { HoverableIcon } from "../Hooks.tsx";
+import { LoadedState, PseudoBoolean } from "../Types.ts";
 import { Breadcrumbs } from "./Breadcrumbs.tsx";
 
 export const ChevronIcon = (large: PseudoBoolean) => {

@@ -1,10 +1,10 @@
-import { useDocFromId, useAppStateValue } from "./State";
-import { useAsyncHelper, useDispatchHandler } from "./Hooks";
+import { useDocFromId, useAppStateValue } from "../State";
+import { useAsyncHelper, useDispatchHandler } from "../Hooks";
 import {
   TriangleLeftFilled,
   TriangleRightFilled,
 } from "@fluentui/react-icons";
-import { LoadedState } from "./Types";
+import { LoadedState } from "../Types";
 
 export const NavBar = () => {  
   const { ux: { pageNumber, selectedCitation, documentId } } = useAppStateValue() as LoadedState;

@@ -1,7 +1,7 @@
-import { useDocFromId, useAppStateValue } from "./State.ts";
-import { useDispatchHandler } from "./Hooks.ts";
-import { HoverableIcon } from "./Hooks.tsx";
-import { LoadedState, Review } from "./Types.ts";
+import { useDocFromId, useAppStateValue } from "../State.ts";
+import { useDispatchHandler } from "../Hooks.ts";
+import { HoverableIcon } from "../Hooks.tsx";
+import { LoadedState, Review } from "../Types.ts";
 import {
   // DismissCircleFilled,
   // DismissCircleRegular,

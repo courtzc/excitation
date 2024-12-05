@@ -1,10 +1,10 @@
-import { useAppState, sortBy } from "./State";
+import { useAppState, sortBy } from "../State";
 import {
   ReactNode,
   useCallback,
   useMemo,
 } from "react";
-import { Citation, LoadedState } from "./Types";
+import { Citation, LoadedState } from "../Types";
 import { CitationUX } from "./Citation";
 import {
   DocumentRegular,
@@ -12,7 +12,8 @@ import {
   DocumentOnePageMultipleRegular,
   DocumentOnePageAddRegular,
 } from "@fluentui/react-icons";
-import { useAsyncHelper, useDispatchHandler } from "./Hooks";
+import { Container, Typography, CircularProgress, Alert, List, ListItem, ListItemText, Divider, Box, ListItemIcon } from "@mui/material";
+import { useAsyncHelper, useDispatchHandler } from "../Hooks";
 
 const maxPageNumber = 1000;
 const unlocatedPage = maxPageNumber;
@@ -108,10 +109,16 @@ export function Sidebar() {
   );
 
   return (
-    <div id="sidebar" onClick={dispatchUnlessError({ type: "selectCitation" })}>
-      <h3 id="citations-label">Review Citations</h3>
-      <div className="sidebar-divider" />
-      <div id="docs">
+    <div  onClick={dispatchUnlessError({ type: "selectCitation" })}>
+      <Box mt={2} >
+      <Typography variant="h5" id="citations-label" color="grey" padding="20px 0px">
+            Review Citations
+      </Typography>
+      {/* <h3 </h3> */}
+      
+      {/* <div className="sidebar-divider" /> */}
+      <List sx={{width: "100%"}}>
+      <div >
         {groupedCitations.map(
           ({
             doc: { documentId, pdfUrl, name },
@@ -122,12 +129,23 @@ export function Sidebar() {
             noCitations,
           }) => {
             return (
-              <div className="doc" key={documentId}>
-                <DocSpacer docSelected={docSelected} className="prefix" />
+              <Box sx={{
+                margin: "0 auto",
+                mt: 2,
+                // padding: "20px 16px",
+                border: "1px solid #ccc",
+                borderRadius: "4px",
+                // display: "flex",
+                // flexDirection: "column",
+                alignItems: "flex-start",
+              }}>
+              <ListItem sx={{width: "100%"}} key={documentId}>
+              <div  >
+                {/* <DocSpacer docSelected={docSelected} className="prefix" /> */}
                 <div
-                  className={`doc-main ${
-                    docSelected ? "selected" : "unselected"
-                  }`}
+                  // className={`doc-main ${
+                  //   docSelected ? "selected" : "unselected"
+                  // }`}
                 >
                   <DocHeader
                     firstPageGroupSelected={firstPageGroupSelected}
@@ -136,6 +154,7 @@ export function Sidebar() {
                     documentId={documentId}
                     name={name ?? pdfUrl}
                   />
+                  <List>
                   {pageGroups.map(
                     (
                       {
@@ -148,6 +167,7 @@ export function Sidebar() {
                       },
                       key
                     ) => (
+                      <ListItem button>
                       <PageGroupHeader
                         firstPage={firstPage}
                         lastPage={lastPage}
@@ -174,9 +194,11 @@ export function Sidebar() {
                           }
                         />
                       </PageGroupHeader>
+                      </ListItem>
                     )
                   )}
-                  <div className="doc-footer">
+                  </List>
+                  <div >
                     <div
                       className={
                         docSelected
@@ -189,8 +211,10 @@ export function Sidebar() {
                   </div>
                 </div>
                 {!docSelected && <div className="sidebar-divider" />}
-                <DocSpacer docSelected={docSelected} className="suffix" />
+                {/* <DocSpacer docSelected={docSelected} className="suffix" /> */}
               </div>
+              </ListItem>
+              </Box>
             );
           }
         )}
@@ -238,6 +262,8 @@ export function Sidebar() {
         </div>
         <div className="sidebar-divider" />
       </div>
+      </List>
+      </Box>
     </div>
   );
 }
@@ -312,7 +338,7 @@ const PageGroupHeader = ({
   children: ReactNode;
 }) => (
   <div
-    className={`page-group ${pageGroupSelected ? "selected" : "unselected"}`}
+    className={` ${pageGroupSelected ? "selected" : "unselected"}`}
     key={firstPage * maxPageNumber + lastPage}
     onClick={onClick}
   >

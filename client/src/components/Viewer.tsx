@@ -9,16 +9,16 @@ import {
   MoreCircleFilled,
 } from "@fluentui/react-icons";
 
-import { useDocFromId, useAppState, useAppStateValue } from "./State";
+import { useDocFromId, useAppState, useAppStateValue } from "../State";
 import {
   calculateRange,
   calculateSerializedRange,
   compareRanges,
   SerializedRange,
-} from "./Range";
-import { useDispatchHandler } from "./Hooks";
-import { HoverableIcon } from "./Hooks.tsx";
-import { LoadedState, Review } from "./Types";
+} from "../Range";
+import { useDispatchHandler } from "../Hooks";
+import { HoverableIcon } from "../Hooks.tsx";
+import { LoadedState, Review } from "../Types";
 
 const colors = ["#00acdc", "#00ac00", "#f07070"];
 const multiple = 72;

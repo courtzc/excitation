@@ -1,14 +1,18 @@
-import "./App.css";
+// import "./App.css";
 import {
   largeSmall,
   useLoadForm,
   useAppStateValue,
   useAsyncStateMachine,
 } from "./State";
-import { QuestionPanel } from "./QuestionPanel";
-import { AnswerPanel } from "./AnswerPanel";
+import { QuestionPanel } from "./components/QuestionPanel";
+import { AnswerPanel } from "./components/AnswerPanel";
 import { useParams } from "react-router";
 import { FormStatus, LoadedState } from "./Types";
+import { Header } from "./components/Header";
+import { Container, Box } from "@mui/material";
+import { Breadcrumbs } from "./components/Breadcrumbs";
+
 
 export function FormQuestion() {
   const { formId, questionId } = useParams();
@@ -31,11 +35,19 @@ const QandA = () => {
   const { ux: {largeQuestionPanel}} = useAppStateValue() as LoadedState;
 
   return (
-    <div
-      id="app"
-      className={`question-${largeSmall(largeQuestionPanel)} `}
-    >
-      <AnswerPanel />
+    <div>
+      <Header />
+      {/* <Breadcrumbs /> */}
+      <Container>
+        <Box mt={2}>
+          <div
+            id="app"
+            className={`question-${largeSmall(largeQuestionPanel)} `}
+          >
+            <AnswerPanel />
+          </div>
+        </Box>
+      </Container>
     </div>
   );
 }
