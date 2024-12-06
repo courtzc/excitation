@@ -19,6 +19,7 @@ export const ReviewCitations = () => {
             <Sidebar />
         </Grid2>
         <Grid2 size={8}>
+            <NavBar />
             <Viewer />
         </Grid2>
       </Grid2>

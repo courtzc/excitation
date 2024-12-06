@@ -4,6 +4,7 @@ import {
   CheckmarkCircleFilled,
   DismissCircleFilled,
 } from "@fluentui/react-icons";
+import { Box } from "@mui/material";
 
 interface Props {
   citationIndex: number; // the citation to render
@@ -14,21 +15,21 @@ interface Props {
 
 export const CitationUX = ({ citationIndex, review, excerpt, selected }: Props) => {
   const Unreviewed = () => (
-    <div className="icon-container unreviewed">
+    <Box className="icon-container unreviewed" sx={{ fontSize: "2rem" }}>
       <CircleRegular className="icon" />
-    </div>
+    </Box>
   );
 
   const Approved = () => (
-    <div className="icon-container approved on">
+    <Box className="icon-container approved on" sx={{ fontSize: "2rem" }}>
       <CheckmarkCircleFilled className="icon" />
-    </div>
+    </Box>
   );
 
   const Rejected = () => (
-    <div className="icon-container rejected on">
+    <Box className="icon-container rejected on" sx={{ fontSize: "2rem" }}>
       <DismissCircleFilled className="icon" />
-    </div>
+    </Box>
   );
 
   return (

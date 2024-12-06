@@ -2,11 +2,13 @@ import { useDocFromId, useAppStateValue } from "../State.ts";
 import { useDispatchHandler } from "../Hooks.ts";
 import { HoverableIcon } from "../Hooks.tsx";
 import { LoadedState, Review } from "../Types.ts";
+import { Box, Typography, Button } from "@mui/material";
 import {
   // DismissCircleFilled,
   // DismissCircleRegular,
   AddCircleRegular,
   AddCircleFilled,
+  ChevronRight24Regular
 } from "@fluentui/react-icons";
 import { useCallback } from "react";
 import { Link } from "react-router";
@@ -89,8 +91,17 @@ export const ApprovedCitations = ({ answer, addExcerptToAnswer }: Props) => {
   // );
 
   return (
-    <div id="approved-citations" className="unselectable">
-      <h3>Approved Citations</h3>
+    <div id="approved-citations">
+
+          <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, fontSize: "1.3em", color: "#63666A", textAlign: "center" }}
+            >
+              Approved Citations
+            </Typography>
+          </Box>
       {citations.map(
         ({ excerpt, documentId, bounds, review }, citationIndex) => {
           if (review !== Review.Approved) return <div key={citationIndex} />;
@@ -140,21 +151,44 @@ export const ApprovedCitations = ({ answer, addExcerptToAnswer }: Props) => {
           );
         }
       )}
-      <h4
-        className="action"
-        onClick={dispatchHandler({ type: "contractAnswerPanel" })}
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: '100%',
+          mt: 2,
+        }}
       >
-        Review citations
-      </h4>
-      {answer == undefined ? (
+        <Button
+          variant="contained"
+          color="paper"
+          onClick={dispatchHandler({ type: "contractAnswerPanel" })}
+        >
+          Review citations
+        </Button>
+        {answer == undefined ? (
         <div />
       ) : nextUnansweredQuestion == -1 ? (
-        <h4>All questions have been answered.</h4>
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
+          <Typography>
+           All questions have been answered.
+          </Typography>
+        </Box>
+        
       ) : (
-        <Link to={`/${formId}/${nextUnansweredQuestion}`}>
-          Next unanswered question
-        </Link>
+        <Button
+            variant="contained"
+            color="paper"
+            component={Link}
+            to={`/${formId}/${nextUnansweredQuestion}`}
+            endIcon={<ChevronRight24Regular />}
+            // sx={{ fontFamily: 'Roboto, sans-serif', fontWeight: 'bold' }}
+          >
+            Next unanswered question
+          </Button>
       )}
+      </Box>
+
     </div>
   );
 };

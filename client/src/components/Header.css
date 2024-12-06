@@ -1,22 +1,26 @@
 /* Header.css */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 .gradient-appbar {
-    background: linear-gradient(to right, #455875, #604481);
-  }
-  
-  .centered-toolbar {
-    display: flex;
-    justify-content: left;
-    width: '85%';
-    margin: '0 auto';
-    /* width: 80%; */
-  }
-  
-  .header-text {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    height: 90%;
-    display: flex;
-    /* align-items: left; */
-  }
+  /* background: linear-gradient(to right, #37527e, #4e3274); */
+  background-color: #37527e;
+  color: #fff;
+  width: 100%;
+}
+
+.centered-toolbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.header-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}

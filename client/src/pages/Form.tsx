@@ -1,8 +1,6 @@
-import { useParams, Link } from "react-router";
+import { useParams, Link } from "react-router-dom";
 import { useAppState, useAppStateValue, useLoadForm } from "../State";
 import { FormStatus, LoadedState } from "../Types";
-import { Breadcrumbs } from "../components/Breadcrumbs";
-import { Header } from "../components/Header";
 import './Form.css';
 
 import { ChevronRight24Regular } from '@fluentui/react-icons';
@@ -41,8 +39,6 @@ const FormView = ({ formId }: Props) => {
       
   return (
       <div>
-        <Header />
-        <Breadcrumbs breadcrumbs={[["Home", "/"], ["Form"]]} />
         <Typography variant="h4" component="h3" gutterBottom align="center" className="typography-padding">
           {templateName}: {formName}
         </Typography>

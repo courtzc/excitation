@@ -132,11 +132,9 @@ export function Sidebar() {
               <Box sx={{
                 margin: "0 auto",
                 mt: 2,
-                // padding: "20px 16px",
                 border: "1px solid #ccc",
                 borderRadius: "4px",
-                // display: "flex",
-                // flexDirection: "column",
+                marginRight: "5%",
                 alignItems: "flex-start",
               }}>
               <ListItem sx={{width: "100%"}} key={documentId}>
@@ -167,34 +165,53 @@ export function Sidebar() {
                       },
                       key
                     ) => (
-                      <ListItem button>
-                      <PageGroupHeader
-                        firstPage={firstPage}
-                        lastPage={lastPage}
-                        pageGroupSelected={pageGroupSelected}
-                        prevPageGroupSelected={prevPageGroupSelected}
-                        nextPageGroupSelected={nextPageGroupSelected}
-                        key={key}
-                        onClick={
-                          pageGroupSelected
-                            ? undefined
-                            : dispatchUnlessError({
-                                type: "selectCitation",
-                                citationIndex,
-                              })
-                        }
-                      >
-                        <CitationUX
-                          key={citationIndex}
-                          citationIndex={citationIndex}
-                          review={citations[citationIndex].review}
-                          excerpt={citations[citationIndex].excerpt}
-                          selected={
-                            selectedCitation?.citationIndex == citationIndex
-                          }
-                        />
-                      </PageGroupHeader>
-                      </ListItem>
+                      <Box sx={{
+                        margin: "0 auto",
+                        mt: 2,
+                        border: "1px solid #ccc",
+                        borderRadius: "4px",
+                        // marginRight: "5%",
+                        alignItems: "flex-start",
+                      }}>
+                          <ListItem
+                            button
+                            sx={{
+                              width: "100%",
+                              cursor: "pointer", // Change cursor on hover
+                              "&:hover": {
+                                backgroundColor: "#f0f0f0", // Optional: Add a hover effect
+                              },
+                            }}
+                          >
+                          <PageGroupHeader
+                            firstPage={firstPage}
+                            lastPage={lastPage}
+                            pageGroupSelected={pageGroupSelected}
+                            prevPageGroupSelected={prevPageGroupSelected}
+                            nextPageGroupSelected={nextPageGroupSelected}
+                            key={key}
+                            onClick={
+                              pageGroupSelected
+                                ? undefined
+                                : dispatchUnlessError({
+                                    type: "selectCitation",
+                                    citationIndex,
+                                  })
+                            }
+                          >
+
+                            <CitationUX
+                              key={citationIndex}
+                              citationIndex={citationIndex}
+                              review={citations[citationIndex].review}
+                              excerpt={citations[citationIndex].excerpt}
+                              selected={
+                                selectedCitation?.citationIndex == citationIndex
+                              }
+                            />
+                          </PageGroupHeader>
+                        </ListItem>
+                      </Box>
                     )
                   )}
                   </List>

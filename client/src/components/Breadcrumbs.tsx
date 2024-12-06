@@ -1,33 +1,32 @@
-import { Link as RouterLink } from "react-router";
-import { Breadcrumbs as MUIBreadcrumbs, Link, Typography, Box } from "@mui/material";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Breadcrumbs as MUIBreadcrumbs, Typography, Box } from "@mui/material";
+import './Breadcrumbs.css';
 
-interface Props {
-  breadcrumbs: [title: string, href?: string][];
-}
+export const Breadcrumbs = () => {
+  const location = useLocation();
+  const pathnames = location.pathname.split('/').filter((x) => x);
 
-export const Breadcrumbs = ({ breadcrumbs }: Props) => {
   return (
-    <Box width="100%" p={2} bgcolor="background.paper">
+    <Box className="breadcrumbs-container">
+      <MUIBreadcrumbs aria-label="breadcrumb" className="breadcrumbs" separator={">"}>
+        <Link to="/" className="breadcrumb-link">
+          Home
+        </Link>
+        {pathnames.map((value, index) => {
+          const to = `/${pathnames.slice(0, index + 1).join('/')}`;
 
-    <MUIBreadcrumbs aria-label="breadcrumb" sx={{width: '85%', margin: '0 auto'}}>
-      {breadcrumbs.map(([title, href], i) => (
-        href ? (
-          <Link
-            key={title}
-            component={RouterLink}
-            to={href}
-            color="inherit"
-            underline="hover"
-          >
-            {title}
-          </Link>
-        ) : (
-          <Typography key={title} color="textPrimary">
-            {title}
-          </Typography>
-        )
-      ))}
-    </MUIBreadcrumbs>
+          return index === pathnames.length - 1 ? (
+            <Typography key={to} className="breadcrumb-text">
+              {value}
+            </Typography>
+          ) : (
+            <Link key={to} to={to} className="breadcrumb-link">
+              {value}
+            </Link>
+          );
+        })}
+      </MUIBreadcrumbs>
     </Box>
   );
-}
+};

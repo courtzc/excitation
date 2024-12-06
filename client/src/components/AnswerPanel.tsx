@@ -12,7 +12,6 @@ import { Box, Divider, Typography } from "@mui/material";
 
 import { ReviewCitations } from "./ReviewCitations.tsx";
 import { ApprovedCitations } from "./ApprovedCitations.tsx";
-import { Breadcrumbs } from "./Breadcrumbs.tsx";
 
 export const AnswerPanel = () => {
   const [state, dispatch] = useAppState();
@@ -88,16 +87,11 @@ export const AnswerPanel = () => {
 
   return (
     <div id="answer-panel" className={largeSmall(largeAnswerPanel)}>
-      <Breadcrumbs
-        breadcrumbs={[["Home", "/"], ["Form", `/${formId}`], ["Question"]]}
-      />
       <div
-        // id="answer-container"
         onClick={largeAnswerPanel ? undefined : onClickOnSmallAnswer}
       >
         <Box
           id="answer-and-buttons"
-          
           sx={{
             margin: "0 auto",
             mt: 2,
@@ -116,19 +110,11 @@ export const AnswerPanel = () => {
               sx={{ flexGrow: 1, fontSize: "1.3em", color: "#63666A" }}
             >
               <span className="question-prefix">
-                {prefix ? <>{prefix}. </> : null}
+                {prefix ? <>{prefix}.</> : null}
               </span>
               <span className="question-text">{text}</span>
             </Typography>
           </Box>
-          {
-            /* <div className="question">
-            <span className="question-prefix">
-              {prefix ? <>{prefix}. </> : null}
-            </span>
-            <span className="question-text">{text}</span>
-          </div> */
-          }
           <textarea
             ref={answerRef}
             className={`answer-text ${largeSmall(largeAnswerPanel)}`}
@@ -156,27 +142,29 @@ export const AnswerPanel = () => {
               <Save />
             </>
           )}
-          <Divider sx={{ width: "100%", marginTop: "16px" }} />
         </Box>
       </div>
-      {/* </div> */}
-      {largeAnswerPanel
-        ? (
-          <ApprovedCitations
-            answer={answer}
-            addExcerptToAnswer={addExcerptToAnswer}
-          />
-        )
-        : <Box sx={{
+      <Box
+        sx={{
           margin: "0 auto",
           mt: 2,
           padding: "20px 16px",
           border: "1px solid #ccc",
           borderRadius: "4px",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-        }}> <ReviewCitations /> </Box>}
+          // flexDirection: "column",
+          // alignItems: "flex-start",
+        }}
+      >
+        {largeAnswerPanel
+          ? (
+            <ApprovedCitations
+              answer={answer}
+              addExcerptToAnswer={addExcerptToAnswer}
+            />
+          )
+          : <ReviewCitations />}
+      </Box>
     </div>
   );
 };

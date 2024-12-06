@@ -51,7 +51,7 @@ export const templates: Template[] = [
       {
         name: "Microsoft FY24Q3",
         documentIds: [
-          0, 1
+          0, 1, 2
         ],    
         citations: [
           [
@@ -61,8 +61,19 @@ export const templates: Template[] = [
               review: 0,
             },
             {
+              excerpt:
+                "Microsoft returned $8.4 billion to shareholders in the form of share repurchases and dividends in the third quarter of fiscal year 2024.",
+              documentId: 0,
+              review: 0,
+            },
+            {
               excerpt: "61,858",
               documentId: 1,
+              review: 0,
+            },
+            {
+              excerpt: "We present a trace-based compilation technique for dynamic languages",
+              documentId: 2,
               review: 0,
             },
           ],
