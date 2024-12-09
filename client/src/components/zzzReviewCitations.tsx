@@ -1,5 +1,5 @@
-import { Sidebar } from "./Sidebar";
-import { Viewer } from "./Viewer";
+import { Sidebar } from "./zzzSidebar";
+import { Viewer } from "./zzzViewer";
 import { NavBar } from "./NavBar";
 import { pdfjs } from "react-pdf";
 import { Box, Container, Grid2, TextField, Typography } from "@mui/material";

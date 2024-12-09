@@ -10,8 +10,8 @@ import {
 import { LoadedState, Review } from "../Types.ts";
 import { Box, Divider, Typography } from "@mui/material";
 
-import { ReviewCitations } from "./ReviewCitations.tsx";
-import { ApprovedCitations } from "./ApprovedCitations.tsx";
+import { ReviewCitations } from "./zzzReviewCitations.tsx";
+import { ApprovedCitations } from "./zzzApprovedCitations.tsx";
 
 export const AnswerPanel = () => {
   const [state, dispatch] = useAppState();

@@ -15,21 +15,4 @@
 .breadcrumb-text {
   color: var(--text-primary);
   font-weight: bold;
-} 
-/* Breadcrumbs.css
-.breadcrumbs-container {
-    width: 100%;
-    padding: 16px;
-    background-color: var(--background-paper);
-  }
-  
-  .breadcrumbs {
-    width: 85%;
-    margin: 0 auto;
-    padding: 10px 0;
-    background-color: var(--background-paper);
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
- */
+}

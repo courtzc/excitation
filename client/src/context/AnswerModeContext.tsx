@@ -1,27 +1,29 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AnswerModeContext = createContext();
 
 export const AnswerModeProvider = ({ children }) => {
-  const [answerMode, setAnswerMode] = useState(false);
+    const [answerMode, setAnswerMode] = useState(false);
 
-  const turnOnAnswerMode = () => {
-    setAnswerMode(true);
-  };
+    const turnOnAnswerMode = () => {
+        setAnswerMode(true);
+    };
 
-  const turnOffAnswerMode = () => {
-    setAnswerMode(false);
-  };
+    const turnOffAnswerMode = () => {
+        setAnswerMode(false);
+    };
 
-  useEffect(() => {
-    console.log('Answer mode is: ', answerMode);
-  }, [answerMode]);
+    useEffect(() => {
+        console.log("Answer mode is: ", answerMode);
+    }, [answerMode]);
 
-  return (
-    <AnswerModeContext.Provider value={{ answerMode, turnOnAnswerMode, turnOffAnswerMode }}>
-      {children}
-    </AnswerModeContext.Provider>
-  );
+    return (
+        <AnswerModeContext.Provider
+            value={{ answerMode, turnOnAnswerMode, turnOffAnswerMode }}
+        >
+            {children}
+        </AnswerModeContext.Provider>
+    );
 };
 
 export const useAnswerMode = () => useContext(AnswerModeContext);

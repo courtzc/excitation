@@ -1,9 +1,11 @@
 .content-container {
     margin-top: 16px;
     margin-bottom: 16px;
-    min-height: calc(100vh - 128px); /* Adjust for header, footer, and breadcrumbs */
+    min-height: calc(
+        100vh - 128px
+    ); /* Adjust for header, footer, and breadcrumbs */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}

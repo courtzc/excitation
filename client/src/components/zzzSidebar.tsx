@@ -5,7 +5,7 @@ import {
   useMemo,
 } from "react";
 import { Citation, LoadedState } from "../Types";
-import { CitationUX } from "./Citation";
+import { CitationUX } from "./zzzCitation";
 import {
   DocumentRegular,
   DocumentOnePageRegular,

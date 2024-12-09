@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-import "./SimpleQuestion.css";
 
 export const SimpleQuestion = () => {
     const prefix = 1;
@@ -12,7 +11,7 @@ export const SimpleQuestion = () => {
                 className="typography"
             >
                 <span className="question-prefix">
-                    {prefix ? <>{prefix}. </> : null}
+                    {prefix ? <>{prefix}.</> : null}
                 </span>
                 <span className="question-text">{text}</span>
             </Typography>
