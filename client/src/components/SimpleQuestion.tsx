@@ -1,17 +1,18 @@
 import { Box, Typography } from "@mui/material";
+import "./SimpleQuestion.css";
 
 export const SimpleQuestion = () => {
     const prefix = 1;
     const text = "What is the capital of France?";
     return (
-        <Box sx={{ display: "flex", alignItems: "center", width: "100%" }}>
+        <Box className="box">
             <Typography
-                variant="h6"
+                variant="h5"
                 component="div"
-                sx={{ flexGrow: 1, fontSize: "1.3em", color: "#63666A" }}
+                className="typography"
             >
                 <span className="question-prefix">
-                    {prefix ? <>{prefix}.</> : null}
+                    {prefix ? <>{prefix}. </> : null}
                 </span>
                 <span className="question-text">{text}</span>
             </Typography>

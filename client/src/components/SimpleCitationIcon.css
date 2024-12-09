@@ -1,0 +1,6 @@
+.icon-container {
+    position: relative;
+    :hover {
+      cursor: pointer;
+    }
+  }

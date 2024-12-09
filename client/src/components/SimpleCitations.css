@@ -1,9 +1,15 @@
-.root {
+/* .root {
     width: 100%;
     max-width: 36ch;
     background-color: var(--background-paper);
 }
 
 .nested {
-    padding-left: 32px; /* 8 * 8px (theme.spacing(8)) */
+    padding-left: 128px; 8 * 8px (theme.spacing(8))
 }
+
+.typography {
+    flex-grow: 1;
+    font-size: 1.3em;
+    color: #63666A;
+} */

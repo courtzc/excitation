@@ -1,16 +1,23 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Breadcrumbs } from "../components/Breadcrumbs";
+import { Container, CssBaseline } from "@mui/material";
 
-export const MainLayout = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export const MainLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div>
+    <>
+      <CssBaseline />
       <Header />
       <Breadcrumbs />
-      <main>
-        <Outlet />
-      </main>
-    </div>
+      <Container className="content-container">
+        {children}
+      </Container>
+      {/* <Footer /> */}
+    </>
   );
 };

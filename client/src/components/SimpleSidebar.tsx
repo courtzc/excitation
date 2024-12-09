@@ -2,20 +2,19 @@ import { Box } from "@mui/system";
 import { SimpleQuestion } from "./SimpleQuestion";
 import { SimpleAnswer } from "./SimpleAnswer";
 import { SimpleCitations } from "./SimpleCitations";
+import { SimpleReviewedCitations } from "./SimpleReviewedCitations";
+import { useAnswerMode } from "../context/AnswerModeContext";
+
+import "./SimpleSidebar.css";
 
 export const SimpleSidebar = () => {
+    const { answerMode } = useAnswerMode();
+
     return (
-        <Box
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                backgroundColor: "paper"
-            }}
-        >
+        <Box className="sidebar">
             <SimpleQuestion />
             <SimpleAnswer />
-            <SimpleCitations />
+            {answerMode ? <SimpleReviewedCitations /> : <SimpleCitations />}
         </Box>
     );
 };

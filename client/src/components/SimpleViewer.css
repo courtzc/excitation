@@ -1,0 +1,12 @@
+ .viewer-container {
+    /* height: 100%; Full height of the parent */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+/*
+.box {
+    height: 100%; Full height of the parent
+    overflow-y: auto; Enable vertical scrolling
+} */

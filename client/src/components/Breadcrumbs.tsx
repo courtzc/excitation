@@ -8,7 +8,6 @@ export const Breadcrumbs = () => {
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   return (
-    <Box className="breadcrumbs-container">
       <MUIBreadcrumbs aria-label="breadcrumb" className="breadcrumbs" separator={">"}>
         <Link to="/" className="breadcrumb-link">
           Home
@@ -27,6 +26,5 @@ export const Breadcrumbs = () => {
           );
         })}
       </MUIBreadcrumbs>
-    </Box>
   );
 };
