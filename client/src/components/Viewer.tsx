@@ -19,6 +19,7 @@ import {
 import { useDispatchHandler } from "../Hooks";
 import { HoverableIcon } from "../Hooks.tsx";
 import { LoadedState, Review } from "../Types";
+import { NavBar } from "./NavBar";
 
 const colors = ["#00acdc", "#00ac00", "#f07070"];
 const multiple = 72;
@@ -105,6 +106,7 @@ export function Viewer() {
 
   return (
     <div ref={viewerRef} id="viewer-viewport">
+      
       {documentId == undefined ? (
         <div>
           <p>You can select a document in the sidebar.</p>
@@ -118,6 +120,7 @@ export function Viewer() {
         </div>
       ) : (
         <>
+          {/* <NavBar /> */}
           <Document
             file={docFromId[documentId].pdfUrl}
             onLoadSuccess={onDocumentLoadSuccess}

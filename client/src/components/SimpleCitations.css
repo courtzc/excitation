@@ -1,0 +1,9 @@
+.root {
+    width: 100%;
+    max-width: 36ch;
+    background-color: var(--background-paper);
+}
+
+.nested {
+    padding-left: 32px; /* 8 * 8px (theme.spacing(8)) */
+}
