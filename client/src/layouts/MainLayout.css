@@ -1,3 +1,16 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .main-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+  }
+  
+
 .content-container {
     margin-top: 16px;
     margin-bottom: 16px;
@@ -5,6 +18,7 @@
         100vh - 128px
     ); /* Adjust for header, footer, and breadcrumbs */
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;

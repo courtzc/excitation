@@ -53,7 +53,7 @@ const SimpleFormQuestionContent = () => {
         size={answerMode ? 3 : 9}
         sx={{ height: "100%", transition: "width 0.5s ease" }}
       >
-        <Box className="grid-column">
+        <Box className="grid-column-scrollable">
           <SimpleViewer />
         </Box>
       </Grid2>

@@ -12,6 +12,7 @@ import { DocumentRegular } from "@fluentui/react-icons";
 import React from "react";
 import { SimpleCitationIcon } from "./SimpleCitationIcon";
 import { items } from "../items";
+import "../pages/SimpleFormQuestion.css"
 
 export const SimpleCitations = () => {
     const [selectedIndex, setSelectedIndex] = React.useState(1);

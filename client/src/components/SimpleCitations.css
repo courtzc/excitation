@@ -1,0 +1,35 @@
+.column-scrollable {
+    overflow-y: auto; /* Enable scrolling */
+    height: 100%; /* Ensure the column fills the available space */
+    box-sizing: border-box;
+}
+
+/* Scrollbar styling for modern browsers */
+.column-scrollable::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+    height: 8px; /* Height of the horizontal scrollbar (if needed) */
+}
+
+.column-scrollable::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Background of the scrollbar track */
+    border-radius: 4px;
+}
+
+.column-scrollable::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 16px; /* Roundness of the scrollbar thumb */
+    border: 2px solid #f0f0f0; /* Padding around the thumb */
+}
+
+.column-scrollable::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker color on hover */
+}
+
+.column-scrollable {
+    scrollbar-width: thin; /* Make the scrollbar thin */
+    scrollbar-color: #888 #f0f0f0; /* thumb and track */
+}
+
+.fab {
+    top: 15%;
+}

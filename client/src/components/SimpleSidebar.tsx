@@ -12,9 +12,13 @@ export const SimpleSidebar = () => {
 
     return (
         <Box className="sidebar">
-            <SimpleQuestion />
-            <SimpleAnswer />
-            {answerMode ? <SimpleReviewedCitations /> : <SimpleCitations />}
+            <Box className="sidebar-content">
+                <SimpleQuestion />
+                <SimpleAnswer />
+            </Box>
+            <Box className="scrollable">
+                {answerMode ? <SimpleReviewedCitations /> : <SimpleCitations />}
+            </Box>
         </Box>
     );
 };
